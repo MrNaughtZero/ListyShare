@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'include/styles.html' %}
+    <title>ListyShare</title>
+</head>
+<body>
+    {% include 'include/navigation/navigation-logged-in.html' %}
+    <main>
+        <div class="profile-wrapper">
+            <div class="profile-info">
+                <h1 id="profile-username">{{current_user.get_username()}}</h1>
+            </div>
+
+            <div class="profile-split">
+                <div class="profile-left">
+                    <h3 id="your-lists-profile">
+                        Your Lists
+                    </h3>
+                    {% for item in lists %}
+                        <div class="profile-list">
+                                <h3><a href="{{url_for('main.list_page', user=current_user.get_username(), link_code=item.link_code)}}">{{item.name}}</h3></a>
+                            {% if item.explore == 'y' %}
+                                <h4 class="exploreable">Explorable</h4>
+                            {% else %}
+                                <h4 class="exploreable">Not Exporable</h4>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <dib class="profile-right">
+                    Starred Lists
+                </dib>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

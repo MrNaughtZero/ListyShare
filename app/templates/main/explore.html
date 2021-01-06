@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'include/styles.html' %}
+    <title>ListyShare - Explore</title>
+</head>
+<body>
+    {% if current_user.is_authenticated %}
+        {% include 'include/navigation/navigation-logged-in.html' %}
+    {% else %}
+        {% include 'include/navigation/navigation-logged-out.html' %}
+    {% endif %}
+    <main>
+        <div class="explore-wrapper">
+            <h2 id="explore-heading">
+                Explore our most popular lists
+            </h2>
+            <div class="explore-lists">
+                {% for item in lists %}
+                    <div class="explore-block">
+                            <h3 class="explore-list-name">
+                                <a href="{{url_for('main.list_page', user=item.user, link_code=item.link_code)}}">
+                                    {{item.name}}
+                                </a>
+                            </h3>
+                            {% if current_user.is_authenticated %}
+                                {% if current_user.get_username()|title == item.user|title %}
+                                    <h5 class="explore-by">By <span class="list-by"><a href="{{url_for('main.profile')}}">{{item.user}}</span></a></h5>
+                                {% else %}
+                                    <h5 class="explore-by">By <span class="list-by"><a href="{{url_for('main.public_profile', username=item.user)}}">{{item.user}}</span></a></h5>
+                                {% endif %}
+                            
+                            {% else %}
+                                <h5 class="explore-by">By <span class="list-by"><a href="{{url_for('main.public_profile', username=item.user)}}">{{item.user}}</span></a></h5>
+                            {% endif %}
+                            <h4 class="exploreable">Explorable</h4>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>

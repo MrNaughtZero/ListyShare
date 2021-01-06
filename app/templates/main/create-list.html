@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'include/styles.html' %}
+    <title>Create a new list - ListyShare</title>
+</head>
+<body>
+    {% if current_user.is_authenticated %}
+        {% include 'include/navigation/navigation-logged-in.html' %}
+    {% else %}
+        {% include 'include/navigation/navigation-logged-out.html' %}
+    {% endif %}
+    <main>
+        {% if not current_user.is_authenticated %}
+            <div class="login-required">
+                <h1>Getting Started</h1>
+                <p class="login-required-p">
+                    In order to create a list, you must sign in. Feel free to login or create an account to create a list.
+                </p>
+                <a href="{{url_for('auth.login')}}">
+                    <button type="button" class="btn-blue">Sign in</button>
+                </a>
+                <a href="{{url_for('auth.register')}}">
+                    <button type="button" class="btn-blue">Register</button>
+                </a>
+            </div>
+        
+        {% else %}
+            {% if message != [] %}
+                    <div class="flashed-message">{{message[0] | replace('[', '') | replace(']', '') | replace("'", '') }} </div>
+            {% endif %}
+            <h1></h1>
+            <div class="create-list-form">
+                <form method="POST" action="/add/list">
+                    {{form.list_name(placeholder="List name", class="list-name-input")}}
+                    <p class="create-list-p">This is the name of the list. It must be unique to your other lists. List name cannot exceed 60 characters.                    </p>
+                    {{form.list_items(placeholder="Write or paste your list here. Each line is a list item", class="list-items-textarea")}}
+                    <p class="create-list-p">
+                        Enter your list items. Each line is a list item. You'll be able to edit these later.
+                    </p>
+                   <div class="explore-checkbox">
+                    {{form.exploreable(id="explore-checkbox")}}
+                    <h4>Searchable</h4>
+                   </div>
+                   <p class="create-list-p">
+                    Searchable determines if a list is discoverable through our explore section. Regardless if a list is set to searchable or not, the list will be accessible via URL.
+                    </p>
+                    
+                    {{form.csrf_token}}
+
+                    <button type="submit" class="btn-blue">Create List</button>
+                    
+                </form>
+            </div>
+        
+        {% endif %}
+
+        
+    </main>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'include/styles.html' %}
+    <title>ListyShare</title>
+</head>
+<body>
+    {% include 'include/navigation/navigation-logged-out.html' %}
+    <main>
+        <div class="index-top-section">
+            <h1>Create lists to share<br> with everyone</h1>
+            <div class="top-section-buttons">
+                <a href="{{url_for('main.create_list')}}">
+                    <button type="button" class="btn-blue">Try it out</button>
+                </a>
+                <a href="{{url_for('main.explore')}}">
+                    <button type="button" class="btn-blue">Explore</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="features">
+            
+        </div>
+    </main>
+</body>
+</html>

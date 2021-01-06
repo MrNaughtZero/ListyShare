@@ -1,0 +1,29 @@
+<nav>
+    <div class="nav-branding">
+        <a href="{{url_for('main.index')}}">
+            ListyShare
+        </a>
+    </div>
+    <div class="nav-links">
+        <ul>
+            <a href="{{url_for('main.explore')}}">
+                <li>
+                    <img src="{{url_for('static', filename='images/svg/search.svg')}}" id="search-svg" height="20" width="20">
+                    Explore
+                </li>
+            </a>
+            <a href="{{url_for('main.create_list')}}">
+                <li>
+                    <img src="{{url_for('static', filename='images/svg/plus.svg')}}" id="plus-svg" height="20" width="20">
+                    Create
+                </li>
+            </a>
+            <a href="{{url_for('auth.login')}}">
+                <li>
+                    <img src="{{url_for('static', filename='images/svg/user.svg')}}" id="login-svg" height="20" width="20">
+                    Sign In
+                </li>
+            </a>
+        </ul>
+    </div>
+</nav>

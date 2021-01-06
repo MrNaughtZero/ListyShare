@@ -1,0 +1,493 @@
+/* global styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;800&display=swap');
+
+html, body, ul {
+    margin: 0;
+    padding: 0;
+    font-family: "Karla", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+    font-weight: 300;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+input, textarea {
+    outline: none;
+}
+
+/* colors */
+
+:root {
+    --white: #f9f7f7;
+    --blue: #3f72af;
+    --d-blue: #112d4e;
+    --border: rgb(226, 232, 240);
+}
+
+/* navigation */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.nav-links {
+    position: relative;
+    bottom: 5px;
+}
+
+.nav-links ul li {
+    display: inline-block;
+    padding-right: 20px;
+}
+
+img#login-svg, img#plus-svg, img#search-svg, img#logout-svg {
+    position: relative;
+    top: 4px;
+}
+
+/* auth */
+
+.auth-body {
+    background-image: linear-gradient(to right, #141e30, #243b55);
+}
+
+.auth-body .nav-branding {
+    color: white;
+}
+
+.auth-body .nav-links {
+    display: none;
+}
+
+.auth-wrapper {
+    max-width: 350px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    top: 50px;
+    padding: 60px;
+    background: #536c70;
+}
+
+.auth-wrapper form {
+    width: 100%;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+h3#auth-form-heading {
+    color: white;
+    text-align: center;
+    font-family: system-ui;
+    margin-bottom: 20px;
+}
+
+p#auth-login-text {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+span.password-placeholder {
+    position: relative;
+    top: -36px;
+    color: grey;
+    left: 37px;
+}
+
+span.username-placeholder {
+    color: grey;
+    position: relative;
+    bottom: 40px;
+    left: 37px;
+}
+
+img#password-padlock-svg {
+    position: relative;
+    bottom: 60px;
+    left: 9px;
+}
+
+img#user-two-svg {
+    position: relative;
+    bottom: 59px;
+    left: 10px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -39px;
+}
+
+.form-control input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--border);
+    font-size: 18px;
+    font-family: 'Karla';
+}
+
+.auth-form-inputs {
+    padding: 20px;
+    border-radius: 2px;
+}
+
+h1.form-header {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+button.form-btn {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    width: 90%;
+    border: none;
+    background-color: var(--blue);
+    color: white;
+    padding: 15px;
+}
+
+.login-items {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    color: azure;
+    font-size: 13px;
+}
+
+.login-item-one {
+    position: relative;
+    right: 18px;
+}
+
+span#remember-checkbox {
+    position: relative;
+    bottom: 2px;
+}
+
+.login-item-two {
+    position: relative;
+    top: 2px;
+    left: 15px;
+}
+
+.login-divider::after {
+    content: " ";
+    width: 300px;
+    height: 2px;
+    color: red;
+    background: darkgray;
+    position: absolute;
+    top: 95%;
+    left: 8%;
+}
+
+button.form-btn.create-account-btn {
+    position: relative;
+    top: 45px;
+}
+
+.flashed-message {
+    text-align: center;
+    color: red;
+}
+
+/* index */
+
+/*index top section */
+
+.index-top-section {
+    text-align: center;
+    margin-top: 100px;
+}
+
+
+.top-section-buttons {
+    margin-top: 20px;
+}
+
+.btn-blue {
+    background: var(--d-blue);
+    color: white;
+    border: 1px solid var(--d-blue);
+    padding: 10px;
+    width: 150px;
+    border-radius: 2px;
+}
+
+/* features */
+
+.features {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+/* index end */
+
+/* create list */
+
+.login-required {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+}
+
+p.login-required-p {
+    margin: 30px 0;
+}
+
+.create-list-form {
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+    display: flex;
+    border: 2px solid var(--border);
+    padding: 30px;
+    border-radius: 4px;
+}
+
+.create-list-form form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input.list-name-input {
+    padding: 10px 4px;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    text-indent: 2px;
+    font-size: 20px;
+}
+
+.create-list-p {
+    margin-top: 13px;
+    font-size: 12px;
+    margin-left: 5PX;
+    COLOR: GREY;
+}
+
+textarea.list-items-textarea {
+    margin-top: 20px;
+    border: none;
+    text-indent: 2px;
+    height: 350px;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+}
+
+.explore-checkbox {
+    display: flex;
+    margin-top: 30px;
+}
+
+.explore-checkbox h4 {
+    font-weight: 300;
+    font-size: 13px;
+    padding-left: 2px;
+    position: relative;
+    top: 2px;
+}
+
+.create-list-form button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* view list */
+
+.view-list-wrapper {
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+    top: 50px;
+    padding: 40px;
+}
+
+.view-list-top-bar {
+    display: flex;
+    padding-bottom: 20px;
+    justify-content: space-between;
+}
+
+h3.list-title {
+    font-weight: 500;
+    font-size: 23px;
+    padding-bottom: 16px;
+}
+
+span.list-by {
+    font-weight: 800;
+    border-bottom: 2px solid black;
+}
+
+h4.exploreable {
+    margin-top: 14px;
+    background: #EDF2F7;
+    padding: 7px;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.view-list-top-right input {
+    padding: 5px;
+    border: 1px solid #EDF2F7;
+    width: 200px;
+    border-radius: 2px;
+}
+
+.view-list {
+    border-bottom: 2px solid gainsboro;
+    position: relative;
+    top: 10px;
+}
+
+.view-list h5 {
+    font-size: 20px;
+    padding-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.list-items {
+    margin-top: 20px;
+}
+
+p.looped-list-item {
+    height: 30px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.list-item-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-item-block:nth-child(odd) {
+    background: #EDF2F7;
+}
+
+img.svg-delete {
+    position: relative;
+    top: 10px;
+    right: 10px;
+}
+
+/* edit list - logged in */
+
+span.edit-list-title {
+    font-size: 12px;
+    position: relative;
+    top: -2px;
+}
+
+img#edit-svg {
+    position: relative;
+    top: 2px;
+}
+
+.view-list-edit-title {
+    display: none;
+    width: 100%;
+}
+
+.view-list-edit-title form {
+    width: 100%;
+}
+
+/* add list item */
+
+.add-item-form {
+    display: none;
+    width: 100%;
+}
+
+.add-item-form form {
+    width: 100%;
+}
+
+.add-multiple-items-form {
+    display: none;
+    width: 100%;
+}
+
+.add-multiple-items-form form {
+    width: 100%;
+}
+
+.add-multiple-items-form textarea.list-items-textarea {
+    height: 200px;
+}
+
+/* profile */
+
+.profile-wrapper {
+    padding: 40px;
+}
+
+.profile-info {
+    margin-bottom: 30px;
+}
+
+h3#your-lists-profile {
+    display: inline-block;
+    padding-bottom: 3px;
+    border-bottom: 2px solid;
+    margin-bottom: 20px;
+}
+
+.profile-list {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+}
+
+.profile-split {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-left, .profile-right {
+    width: 50%;
+}
+
+/* explore */
+
+.explore-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2#explore-heading {
+    padding-bottom: 10px;
+    border-bottom: 2px solid;
+    margin-bottom: 40px;
+    display: inline-block;
+}
+
+.explore-block {
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 20px;
+}

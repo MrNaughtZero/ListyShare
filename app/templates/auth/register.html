@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'include/styles.html' %}
+    <title>Register - ListyShare</title>
+</head>
+<body>
+    {% include 'include/navigation/navigation-logged-out.html' %}
+    <main>
+        {% if message != [] %}
+                <div class="flashed-message">{{message[0] | replace('[', '') | replace(']', '') | replace("'", '') }} </div>
+        {% endif %}
+        <div class="auth-wrapper">
+            <form method="POST" action="/auth/create/account">
+                <h1 class="form-header">Create your ListyShare account</h1>
+                <div class="form-control">
+                    <label for="email">Email<span class="asterisk">*</span> :</label>
+                    {{form.email}}
+                </div>
+
+                <div class="form-control">
+                    <label for="username">Username<span class="asterisk">*</span> :</label>
+                    {{form.username}}
+                </div>
+
+                <div class="form-control">
+                    <label for="password">Password<span class="asterisk">*</span> :</label>
+                    {{form.password}}
+                </div>
+
+                <div class="form-control">
+                    <label for="confirm_password">Confirm Password<span class="asterisk">*</span> :</label>
+                    {{form.confirm_password}}
+                </div>
+
+                {{form.csrf_token}}
+
+                <button type="submit" class="form-btn">Create Account</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
